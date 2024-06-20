@@ -17,6 +17,13 @@ app.use(cors({
     credentials: true
 }))
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://gracks.vercel.app'); // Replace with your allowed origin
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 app.use('/workouts', workoutRoutes)
 app.use('/users', userRoutes)
 app.get("/", (req, res) => {
