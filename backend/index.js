@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan('tiny'))
 
 app.use(cors({
-    origin: ["https://gracks.vercel.app/"],
+    origin: ["https://gracks.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
 }))
