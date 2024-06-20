@@ -19,6 +19,9 @@ app.use(cors({
 
 app.use('/workouts', workoutRoutes)
 app.use('/users', userRoutes)
+app.get("/", (req, res) => {
+    res.json("Hello World")
+})
 
 
 console.log(process.env.PORT)
