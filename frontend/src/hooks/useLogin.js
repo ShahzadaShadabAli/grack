@@ -15,7 +15,7 @@ const useLogin = () => {
         setError(null)
         setIsloading(true)
         try {
-            const response = await axios.post('/users/login', {email, password})
+            const response = await axios.post('https://grack.vercel.app/users/login', {email, password})
             if (response.statusText == "OK") {
                 localStorage.setItem('user', JSON.stringify(response.data))
                 setIsloading(false)
