@@ -5,7 +5,7 @@ const CreateTracks = ({ tracks, fetchTracks }) => {
         const parent = event.target.parentNode.parentNode
         try {
             parent.remove();
-          const response = await api.delete(`/workouts/${_id}`);
+          const response = await api.delete(`https://grack.vercel.app/workouts/${_id}`);
         } catch (error) {
           alert(error.message);
         }
