@@ -19,6 +19,7 @@ const useLogin = () => {
             if (response.statusText == "OK") {
                 localStorage.setItem('user', JSON.stringify(response.data))
                 setIsloading(false)
+                console.log(response.data)
                 dispatch({type: "login", payload: response.data})
                 navigate('/dashboard')
             }
