@@ -13,6 +13,7 @@ const LoginScreen = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        console.log("This working")
         await login(email, password)
     }
 
