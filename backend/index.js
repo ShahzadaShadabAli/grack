@@ -10,12 +10,12 @@ connectDB()
 
 app.use(express.json());
 app.use(morgan('tiny'))
-app.use(cors())
-// app.use(cors({
-//     origin: ["https://deploy-mern-1whq.vercel.app"],
-//     methods: ["POST", "GET"],
-//     credentials: true
-// }))
+
+app.use(cors({
+    origin: ["https://gracks.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true
+}))
 
 app.use('/workouts', workoutRoutes)
 app.use('/users', userRoutes)
