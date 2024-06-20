@@ -28,7 +28,7 @@ const TrackHistory = () => {
     async function fetchTracks() {
         setIsLoading(true);
         try {
-            const response = await api.get('/workouts');
+            const response = await api.get('https://grack.vercel.app/workouts');
             if (response.statusText === 'OK') {
                 setTracks(response.data);
                 setIsLoading(false);
