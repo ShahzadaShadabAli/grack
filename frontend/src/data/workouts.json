@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "date": "Bench Press",
+            "day": "Back",
+            "weight": 50
+        },
+        {
+            "date": "Shoulder Press",
+            "day": "Chest",
+            "weight": 30
+        },
+        {
+            "date": "Lateral Raises",
+            "day": "Leg",
+            "weight": 40
+        },
+        {
+            "date": "Squat",
+            "day": "Chest",
+            "weight": 20
+        },
+        {
+            "date": "Lateral Raises",
+            "day": "Leg",
+            "weight": 40
+        },
+        {
+            "date": "Squat",
+            "day": "Back",
+            "weight": 20
+        },
+        {
+            "date": "Lateral Raises",
+            "day": "Leg",
+            "weight": 40
+        },
+        {
+            "date": "Squat",
+            "day": "Chest",
+            "weight": 20
+        },
+        {
+            "date": "Bicep Curls",
+            "day": "Back",
+            "weight": 45
+        }
+    ]
+}

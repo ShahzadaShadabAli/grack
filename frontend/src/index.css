@@ -1,0 +1,254 @@
+body {
+  min-height: 100vh;
+  background-image: url('../public/bg-white.jpg');
+  background-size: contain;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+a.active {
+  font-weight: 900;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-heading {
+  margin-top: 3rem !important;
+}
+
+.tracks {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.h-tracks {
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  padding: 10px 20px;
+}
+
+.track {
+  padding: 10px;
+  width: 223px;
+  height: 126px;
+  /* height: 200px; */
+  background-image: url('../public/steel-plates.png');
+  background-size:contain;
+  transition: transform 0.2s, box-shadow 0.2s;
+  will-change: transform, box-shadow;
+  overflow: hidden;
+}
+
+.track:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.h-track {
+  padding: 10px;
+  width: 126px;
+  height: 126px;
+  /* height: 200px; */
+  background-image: url('../public/wooden-box.png');
+  background-size:contain;
+  transition: transform 0.2s, box-shadow 0.2s;
+  will-change: transform, box-shadow;
+  overflow: hidden;
+}
+
+.h-track:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.cross {
+  background: #ffffff;
+  padding: 1px 6px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 190px;
+  margin-top: -10px;
+}
+
+
+.tracks-section {
+  background-image: url('../public/wood.jpg');
+  background-size: contain;
+  overflow-y: scroll;
+}
+
+/* Webkit-based browsers */
+.tracks-section::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.tracks-section::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the scrollbar track */
+}
+
+.tracks-section::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+  border: 3px solid #f1f1f1; /* Padding around the scrollbar thumb */
+}
+
+.tracks-section::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color when hovering over the scrollbar thumb */
+}
+
+.workout-heading {
+  margin-bottom: .25rem !important;
+}
+
+.h-qty-heading {
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.add-new {
+  background-image: url('../public/add-box.png');
+  border-radius: 3px;
+}
+
+
+.btn-custom {
+  margin-bottom: 80px;
+}
+
+.overlay {
+  box-shadow: 2px 2px 20px rgba(17, 17, 17, 0.338);
+  border-radius: 10px;
+  margin: 25px 0;
+}
+
+.tracks-section {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.form-section {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-history {
+  height: 60vh;
+  border-radius: 12px;
+  padding: 20px;
+  background-image: url("../public/stone.jpg");
+  background-size: contain;
+}
+
+@media screen and (max-width: 1000px) {
+  .first-col {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 769px) {
+
+  .tracks-section {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .form-section {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tracks-section {
+    padding: 10px !important;
+  }
+  
+  .track {
+    width: 148.67px;
+    height: 84px;
+    font-size: 12px !important;
+
+  }
+
+  .h-track {
+    width: 84px;
+    height: 84px;
+    font-size: 12px !important;
+
+  }
+  .progress-heading {
+    font-size: 12px;
+  }
+
+  .workout-heading {
+    font-size: 16px;
+    margin-bottom: 0 !important;
+  }
+
+  .form-heading {
+    margin-top: 25px !important;
+  }
+
+  .qty-heading {
+    font-size: 12px !important;
+  }
+
+
+  
+
+    .track:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* transform: scale(.65); */
+      cursor: pointer;
+    }
+
+    .h-qty-heading {
+      font-size: 10px !important;
+    }
+
+    .auth-links {
+      font-size: 12px;
+    }
+
+    navbar {
+      flex-wrap: nowrap;
+    }
+
+    .title {
+      font-size: 14px;
+    }
+
+    .btn-outline-dark {
+      transform: scale(.8);
+    }
+}
