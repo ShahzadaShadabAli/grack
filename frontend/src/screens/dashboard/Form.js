@@ -37,7 +37,7 @@ const ExerciseForm = ({ fetchTracks, isNewTrack }) => {
             reps
         }
         try {
-            const workouts = await api.post("/workouts", { ...workoutLog, user: state.user.id })
+            const workouts = await api.post("https://grack.vercel.app/workouts", { ...workoutLog, user: state.user.id })
             if (workouts) {
                 console.log("Workout Added Successfully")
             } else {
