@@ -20,13 +20,8 @@ const useRegister = () => {
                 dispatch({type: 'login', payload: response.data})
                 navigate('/dashboard')
             }
-        } catch (error) {
-            console.log(error)
-            if (error.response.statusText === 'Bad Request') {
-                setError(error.response.data)
-            } else {
-                setError(error.message)
-            }
+        } catch (error) {           
+            setError(error.message)   
             setIsLoading(false)
         }
     }
