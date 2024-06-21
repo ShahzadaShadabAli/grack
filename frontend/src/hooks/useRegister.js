@@ -21,6 +21,7 @@ const useRegister = () => {
                 navigate('/dashboard')
             }
         } catch (error) {
+            console.log(error)
             if (error.response.statusText === 'Bad Request') {
                 setError(error.response.data)
             } else {
