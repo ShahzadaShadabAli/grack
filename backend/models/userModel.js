@@ -4,7 +4,7 @@ import validator from "validator";
 import jwt from "jsonwebtoken"
 
 const generateToken = (id) => {
-    const token = jwt.sign({id}, process.env.SECRET, { expiresIn: '10s' })
+    const token = jwt.sign({id}, process.env.SECRET, { expiresIn: '2d' })
     return token
 }
 
