@@ -18,7 +18,7 @@ const useLogin = () => {
         try {
             console.log("Waiting");
             const response = await axios.post('https://grack.vercel.app/users/login', { email, password });
-            console.log(response);
+            console.log(response.data);
 
             if (response.status === 200) {
                 localStorage.setItem('user', JSON.stringify(response.data));
