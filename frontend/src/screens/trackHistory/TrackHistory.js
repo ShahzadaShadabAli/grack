@@ -29,8 +29,8 @@ const TrackHistory = () => {
         setIsLoading(true);
         try {
             const response = await api.get('https://grack.vercel.app/workouts');
-            console.log(response)
-            if (response.statusText == 200) {
+           
+            if (response.status == 200) {
                 setTracks(response.data);
                 setIsLoading(false);
             }
