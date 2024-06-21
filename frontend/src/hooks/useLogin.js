@@ -6,32 +6,40 @@ import { useNavigate } from "react-router-dom";
 
 
 const useLogin = () => {
-    const {state, dispatch} = useAuthContext()
-    const [isLoading, setIsloading] = useState(false)
-    const [error, setError] = useState(null)
-    const navigate = useNavigate()
-    axios.defaults.withCredentials = true
+     const { state, dispatch } = useAuthContext();
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
+
     const login = async (email, password) => {
-        setError(null)
-        setIsloading(true)
+        setError(null);
+        setIsLoading(true);
         try {
-            console.log("Waiting")
-            const response = await axios.post('https://grack.vercel.app/users/login', {email, password})
-            console.log(response)
-            if (response.statusText == "OK") {
-                localStorage.setItem('user', JSON.stringify(response.data))
-                setIsloading(false)
-                
-                dispatch({type: "login", payload: response.data})
-                navigate('/dashboard')
+            console.log("Waiting");
+            const response = await axios.post('https://grack.vercel.app/users/login', { email, password });
+            console.log(response);
+
+            if (response.status === 200) {
+                localStorage.setItem('user', JSON.stringify(response.data));
+                setIsLoading(false);
+                dispatch({ type: "login", payload: response.data });
+                navigate('/dashboard');
+            } else {
+                throw new Error('Unexpected response status');
             }
         } catch (error) {
-            if (error.response.statusText == 'Bad Request') {
-                setError(error.response.data)
+            console.error(error); // Log the error for debugging
+            if (error.response) {
+                if (error.response.status === 400) {
+                    setError(error.response.data);
+                } else {
+                    setError(`Error: ${error.response.status} - ${error.response.statusText}`);
+                }
             } else {
-                setError(error.message)
+                setError(error.message);
             }
-            setIsloading(false)
+            setIsLoading(false);
         }
     }
 
