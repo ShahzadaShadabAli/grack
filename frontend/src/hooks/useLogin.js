@@ -10,7 +10,7 @@ const useLogin = () => {
     const [isLoading, setIsloading] = useState(false)
     const [error, setError] = useState(null)
     const navigate = useNavigate()
-
+    axios.defaults.withCredentials = true
     const login = async (email, password) => {
         setError(null)
         setIsloading(true)
