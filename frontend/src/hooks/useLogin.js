@@ -17,10 +17,11 @@ const useLogin = () => {
         try {
             console.log("Waiting")
             const response = await axios.post('https://grack.vercel.app/users/login', {email, password})
+            console.log(response)
             if (response.statusText == "OK") {
                 localStorage.setItem('user', JSON.stringify(response.data))
                 setIsloading(false)
-                console.log(response.data)
+                
                 dispatch({type: "login", payload: response.data})
                 navigate('/dashboard')
             }
