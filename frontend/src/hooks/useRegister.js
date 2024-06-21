@@ -14,7 +14,7 @@ const useRegister = () => {
         setIsLoading(true)
         try {
             const response = await axios.post('https://grack.vercel.app/users/register', {name, email, password})
-            if (response.statusText === 'OK') {
+            if (response.status === 200) {
                 setIsLoading(false)
                 localStorage.setItem('user', JSON.stringify(response.data))
                 dispatch({type: 'login', payload: response.data})
